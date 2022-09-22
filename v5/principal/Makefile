@@ -8,15 +8,15 @@ OBJ= $(SRC:.c=.o)
 all: $(EXEC)
 
 app: $(OBJ)
-   $(CC) -o $@ $^ $(LDFLAGS)
+	$(CC) -o $@ $^ $(LDFLAGS)
 
 %.o:%.c
-   $(CC) -o $@ -c $< $(CFLAGS) -I../generator
+	$(CC) -o $@ -c $< $(CFLAGS) -I../generator
 
-.PHONY:clean mproper
+.PHONY:clean mrproper
 
 clean:
-    rm -rf *.o
+	rm -rf *.o
 
 mrproper: clean
-    rm -rf $(EXEC)
+	rm -rf $(EXEC)
